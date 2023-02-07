@@ -1,12 +1,12 @@
 // 全局共享数据示例 useModel
 import { useState } from 'react';
 import { DEFAULT_NAME } from '@/constants';
-import { noteCentent, noteType } from '@/pages/Note/type';
+import { noteContent, noteType } from '@/pages/Note/type';
 
 const useUser = () => {
   const [name, setName] = useState<string>(DEFAULT_NAME);
   const [storageNoteList, setStorageNoteList] = useState<noteType[]>([]);
-  const [noteContentList, setNoteContentList] = useState<noteCentent[]>([]);
+  const [noteContentList, setNoteContentList] = useState<noteContent[]>([]);
   const [checkNoteKey, setCheckNoteKey] = useState<string>('');
   const [editNoteKey, setEditNoteKey] = useState<string>('');
   return {
@@ -22,7 +22,7 @@ const useUser = () => {
     editNoteKey,
     setEditNoteKey,
     noteContentList,
-    setNoteContentList: (val: noteCentent[]) => {
+    setNoteContentList: (val: noteContent[]) => {
       setNoteContentList(val);
       window.localStorage.setItem('noteContentList', JSON.stringify(val));
     },
