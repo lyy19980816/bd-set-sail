@@ -1,22 +1,27 @@
 const routes = [
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/note',
   },
   {
-    name: '首页',
-    path: '/home',
-    component: './Home',
+    name: '学习',
+    path: '/note',
+    component: './Note',
   },
   {
-    name: '权限演示',
-    path: '/access',
-    component: './Access',
+    name: 'dva',
+    path: '/dvaLearn',
+    component: './DvaLearn',
   },
   {
-    name: ' CRUD 示例',
-    path: '/table',
-    component: './Table',
+    name: 'fiber',
+    path: '/fiberLearn',
+    component: './Fiber/App',
+  },
+  {
+    name: 'valtio',
+    path: '/valtioLearn',
+    component: './Valtio',
   },
 ];
 

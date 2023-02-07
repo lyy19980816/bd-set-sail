@@ -12,4 +12,6 @@ export default defineConfig({
   },
   routes,
   npmClient: 'pnpm',
+  dva: {},
+  valtio: {},
 });
