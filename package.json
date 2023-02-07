@@ -6,9 +6,15 @@
     "dev": "max dev",
     "format": "prettier --cache --write .",
     "postinstall": "max setup",
+    "precommit": "max lint --staged --prettier --fix --style",
     "prepare": "husky install",
     "setup": "max setup",
     "start": "npm run dev"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,less}": [
+      "max lint"
+    ]
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
