@@ -1,6 +1,8 @@
+import React from 'react';
+import { useSnapshot } from '@umijs/max';
+
 import { actions, store } from '@/stores/valtio/index';
-import { useSnapshot } from '@alipay/bigfish';
-import React from '@alipay/bigfish/react';
+
 import styles from './index.less';
 
 const ValtioOther = () => {

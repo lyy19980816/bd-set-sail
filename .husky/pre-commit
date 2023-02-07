@@ -4,3 +4,13 @@
 npx --no-install lint-staged --quiet
 
 echo 'it is a very good commit!'
+
+# Run npm script
+echo "husky > npm run -s precommit (node `node -v`)"
+echo
+
+npm run -s precommit || {
+  echo
+  echo "husky > pre-commit hook failed (add --no-verify to bypass)"
+  exit 1
+}

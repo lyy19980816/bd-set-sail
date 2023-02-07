@@ -1,10 +1,12 @@
-import React, { useState } from '@alipay/bigfish/react';
-import { Button, Input, Modal, Popover, Tree } from '@alipay/bigfish/antd';
+import React, { useState } from 'react';
+import { Button, Input, Modal, Popover, Tree } from 'antd';
+import type { DataNode, TreeProps } from 'antd/es/tree';
+import { useModel } from '@umijs/max';
+
 import { noteType } from '../type';
 import styles from '../index.less';
-import { useModel } from '@alipay/bigfish';
-import type { DataNode, TreeProps } from 'antd/es/tree';
-const LeftNoteCentent: React.FC = () => {
+
+const LeftNoteContent: React.FC = () => {
   // 公共变量
   const {
     checkNoteKey,
@@ -283,4 +285,4 @@ const LeftNoteCentent: React.FC = () => {
     </div>
   );
 };
-export default LeftNoteCentent;
+export default LeftNoteContent;

@@ -1,9 +1,9 @@
-import React, { useEffect } from '@alipay/bigfish/react';
-import { useModel } from '@alipay/bigfish';
-import { PageContainer } from '@alipay/tech-ui';
-import LeftNoteCentent from './components/LeftNoteCentent';
-import RightNoteCentent from './components/RightNoteCentent';
-import ConterNoteInfo from './components/ConterNoteInfo';
+import React, { useEffect } from 'react';
+import { useModel } from '@umijs/max';
+
+import LeftNoteContent from './components/LeftNoteContent';
+import RightNoteContent from './components/RightNoteContent';
+import CenterNoteInfo from './components/CenterNoteInfo';
 import styles from './index.less';
 
 const NotePage: React.FC = () => {
@@ -19,13 +19,13 @@ const NotePage: React.FC = () => {
     );
   }, []);
   return (
-    <PageContainer>
+    <>
       <div className={styles.pageSet}>
-        <LeftNoteCentent></LeftNoteCentent>
-        <ConterNoteInfo></ConterNoteInfo>
-        <RightNoteCentent></RightNoteCentent>
+        <LeftNoteContent></LeftNoteContent>
+        <CenterNoteInfo></CenterNoteInfo>
+        <RightNoteContent></RightNoteContent>
       </div>
-    </PageContainer>
+    </>
   );
 };
 export default NotePage;

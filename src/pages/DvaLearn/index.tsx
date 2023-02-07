@@ -1,7 +1,5 @@
-import React from '@alipay/bigfish/react';
-import { PageContainer } from '@alipay/tech-ui';
-
-import { connect } from '@alipay/bigfish';
+import React from 'react';
+import { connect } from '@umijs/max';
 
 import styles from './index.less';
 import DvaOtherWrapper from './other';
@@ -9,7 +7,7 @@ import DvaOtherWrapper from './other';
 const DvaLearn = (props: { learnTest: any; dispatch: any }) => {
   const { learnTest, dispatch } = props;
   return (
-    <PageContainer ghost>
+    <>
       <div
         className={styles.container}
         onClick={() => {
@@ -24,7 +22,7 @@ const DvaLearn = (props: { learnTest: any; dispatch: any }) => {
         DvaLearn --------- {learnTest}
       </div>
       <DvaOtherWrapper />
-    </PageContainer>
+    </>
   );
 };
 

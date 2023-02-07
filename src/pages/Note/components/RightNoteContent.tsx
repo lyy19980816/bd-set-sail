@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from '@alipay/bigfish/react';
-import { useModel } from '@alipay/bigfish';
-import { Button, Input } from '@alipay/bigfish/antd';
+import React, { useEffect, useState } from 'react';
+import { Button, Input } from 'antd';
+import { useModel } from '@umijs/max';
+
 import styles from '../index.less';
-import { noteCentent } from '../type';
-const RightNoteCentent: React.FC = () => {
+import { noteContent } from '../type';
+const RightNoteContent: React.FC = () => {
   // 公共变量
   const {
     editNoteKey,
@@ -20,7 +21,7 @@ const RightNoteCentent: React.FC = () => {
   // 根据需要编辑的笔记key,set笔记内容
   useEffect(() => {
     if (!editNoteKey) return setValue('');
-    const chooseNote = noteContentList.filter((item: noteCentent) => {
+    const chooseNote = noteContentList.filter((item: noteContent) => {
       return item.key === editNoteKey;
     });
     setValue(chooseNote[0].desc);
@@ -29,7 +30,7 @@ const RightNoteCentent: React.FC = () => {
   // 保存编辑的内容
   const saveNoteContent = () => {
     if (!editNoteKey) return;
-    const saveNote = noteContentList.map((item: noteCentent) => {
+    const saveNote = noteContentList.map((item: noteContent) => {
       if (item.key === editNoteKey) {
         item.desc = value;
       }
@@ -40,7 +41,7 @@ const RightNoteCentent: React.FC = () => {
   // 删除笔记，同时清空选择
   const delNoteContent = () => {
     if (!editNoteKey) return;
-    const delAfterNoteContent = noteContentList.filter((item: noteCentent) => {
+    const delAfterNoteContent = noteContentList.filter((item: noteContent) => {
       return item.key !== editNoteKey;
     });
     setNoteContentList(delAfterNoteContent);
@@ -59,7 +60,7 @@ const RightNoteCentent: React.FC = () => {
     setCheckNoteKey('');
   };
   const saveResetName = () => {
-    const resetNameNote = noteContentList.filter((item: noteCentent) => {
+    const resetNameNote = noteContentList.filter((item: noteContent) => {
       if (item.key === editNoteKey) {
         item.title = name;
       }
@@ -81,7 +82,7 @@ const RightNoteCentent: React.FC = () => {
     setStorageNoteList(saveCatalogList);
   };
   return (
-    <div className={styles.rightNoteCentent}>
+    <div className={styles.rightNoteContent}>
       <Input
         value={name}
         placeholder="笔记名称。。。按enter键确认"
@@ -112,4 +113,4 @@ const RightNoteCentent: React.FC = () => {
     </div>
   );
 };
-export default RightNoteCentent;
+export default RightNoteContent;

@@ -1,4 +1,4 @@
-import React from '@alipay/bigfish/react';
+import React from 'react';
 import './fiber';
 import './test';
 

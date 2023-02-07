@@ -4,7 +4,7 @@ export type noteType = {
   children?: noteType[];
   [k: string]: unknown;
 };
-export type noteCentent = {
+export type noteContent = {
   key: string;
   title: string;
   desc: string;

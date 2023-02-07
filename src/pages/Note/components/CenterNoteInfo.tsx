@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from '@alipay/bigfish/react';
-import { useModel } from '@alipay/bigfish';
-import { Input } from '@alipay/bigfish/antd';
-import styles from '../index.less';
-import { noteCentent } from '../type';
+import React, { useEffect, useState } from 'react';
+import { Input } from 'antd';
+import { useModel } from '@umijs/max';
 
-const ConterNoteInfo: React.FC = () => {
+import styles from '../index.less';
+import { noteContent } from '../type';
+
+const CenterNoteInfo: React.FC = () => {
   const { storageNoteList, checkNoteKey, noteContentList, setEditNoteKey } =
     useModel('global');
-  const [noteCententItem, setNoteContentItem] = useState<noteCentent[]>([]);
+  const [noteContentItem, setNoteContentItem] = useState<noteContent[]>([]);
   const searchNote = (val: string) => {
-    const newSearchList = noteContentList.filter((item: noteCentent) => {
+    const newSearchList = noteContentList.filter((item: noteContent) => {
       return item.title.indexOf(val) !== -1;
     });
     setNoteContentItem([...newSearchList]);
@@ -19,7 +20,7 @@ const ConterNoteInfo: React.FC = () => {
   }, [storageNoteList]);
   useEffect(() => {
     if (!checkNoteKey) return;
-    const chooseNote = noteContentList.filter((item: noteCentent) => {
+    const chooseNote = noteContentList.filter((item: noteContent) => {
       return item.key === checkNoteKey;
     });
     setNoteContentItem(chooseNote);
@@ -28,7 +29,7 @@ const ConterNoteInfo: React.FC = () => {
     setEditNoteKey(key);
   };
   return (
-    <div className={styles.conterNoteInfo}>
+    <div className={styles.centerNoteInfo}>
       <Input
         style={{ height: '38px' }}
         type={'text'}
@@ -38,7 +39,7 @@ const ConterNoteInfo: React.FC = () => {
         placeholder="搜索。。。"
       ></Input>
       <div className={styles.searchList}>
-        {noteCententItem.map((item) => {
+        {noteContentItem.map((item) => {
           return (
             <div
               className={styles.noteItem}
@@ -55,4 +56,4 @@ const ConterNoteInfo: React.FC = () => {
     </div>
   );
 };
-export default ConterNoteInfo;
+export default CenterNoteInfo;
