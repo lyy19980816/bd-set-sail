@@ -3,9 +3,10 @@
   "author": "白店",
   "scripts": {
     "build": "max build",
-    "dev": "max dev",
+    "dev": "max dev MOCK=none",
     "format": "prettier --cache --write .",
     "postinstall": "max setup",
+    "mock": "max dev",
     "precommit": "max lint --staged --prettier --fix --style",
     "prepare": "husky install",
     "setup": "max setup",
