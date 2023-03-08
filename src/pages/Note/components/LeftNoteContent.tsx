@@ -187,7 +187,7 @@ const LeftNoteContent: React.FC = () => {
       </Button>
       <Tree treeData={storageNoteList} onSelect={checkNoteItem} />
       <Modal
-        visible={modalOpen}
+        open={modalOpen}
         footer={null}
         closable={false}
         onCancel={() => {
